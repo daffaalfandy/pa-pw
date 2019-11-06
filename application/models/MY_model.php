@@ -19,6 +19,13 @@ class MY_model extends CI_Model
         $this->db->insert('user', $data);
         return $this->db->affected_rows();
     }
+
+    public function updateMember($id, $update)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('user', $update);
+        return $this->db->affected_rows();
+    }
 }
 
 /* End of file MY_model.php */

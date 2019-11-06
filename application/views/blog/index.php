@@ -15,7 +15,7 @@
                     <td><?= $user['time']; ?> Jam</td>
                     <td><?= $user['type']; ?></td>
                     <td>
-                        <a class="text-info" href="edit.html"><i class="fas fa-edit"> </i></a> &nbsp; &nbsp;
+                        <a class="text-info" href="<?= base_url('blog/edit/' . $user['id']); ?>"><i class="fas fa-edit"> </i></a> &nbsp; &nbsp;
                         <a href="delete.html" class="text-info"><i class="fas fa-trash-alt"> </i></a>
                     </td>
                 </tr>

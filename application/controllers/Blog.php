@@ -71,6 +71,36 @@ class Blog extends CI_Controller
             redirect('blog/add');
         }
     }
+
+    public function edit($id)
+    {
+        $data['user']   = $this->MY_model->getDetail($id);
+        $this->form_validation->set_rules('fullname', 'Fullname', 'trim|required');
+        $this->form_validation->set_rules('identity', 'Sort of Identity', 'trim|required');
+        $this->form_validation->set_rules('identity_num', 'Identity Number', 'trim|required|is_natural');
+
+        if ($this->form_validation->run() == false) {
+
+            $this->load->view('templates/header');
+            $this->load->view('templates/navbar');
+            $this->load->view('blog/edit', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $update     = [
+                'fullname'      => htmlspecialchars($this->input->post('fullname', true)),
+                'identity'      => htmlspecialchars($this->input->post('identity', true)),
+                'identity_num'  => htmlspecialchars($this->input->post('identity_num', true)),
+                'time'          => $this->input->post('time', true)
+            ];
+            if ($this->MY_model->updateMember($id, $update)) {
+                $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Update Success </div>');
+                redirect('blog/edit');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Update Failed </div>');
+                redirect('blog/edit');
+            }
+        }
+    }
 }
 
 /* End of file Blog.php */
