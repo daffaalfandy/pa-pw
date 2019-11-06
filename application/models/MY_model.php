@@ -13,6 +13,12 @@ class MY_model extends CI_Model
     {
         return $this->db->get_where('user', ['id' => $id])->row_array();
     }
+
+    public function addMember($data)
+    {
+        $this->db->insert('user', $data);
+        return $this->db->affected_rows();
+    }
 }
 
 /* End of file MY_model.php */

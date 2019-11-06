@@ -10,7 +10,7 @@
                 <a class="nav-link" href="<?= base_url('blog'); ?>">List Member<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="add.html">Add Member</a>
+                <a class="nav-link" href="<?= base_url('blog/add'); ?>">Add Member</a>
             </li>
             <li class=" text-right">
                 <a class="nav-link" href="logout.html">Logout</a>

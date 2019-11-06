@@ -20,11 +20,11 @@
                                     </tr>
                                     <tr>
                                         <th>Sort of Identity</th>
-                                        <td><?= $jenis_identitas; ?></td>
+                                        <td><?= $identity; ?></td>
                                     </tr>
                                     <tr>
-                                        <th>No. Identity</th>
-                                        <td><?= $no_identitas; ?></td>
+                                        <th>Identity Number</th>
+                                        <td><?= $identity_num; ?></td>
                                     </tr>
                                     <tr>
                                         <th>Gender</th>
