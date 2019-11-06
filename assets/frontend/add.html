@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/all.css">
+    <title>Ukulele Game Warnet</title>
+</head>
+
+<body style="background: #353b48;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Ukulele</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">List Member<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="add.html">Add Member</a>
+                </li>
+                <li class=" text-right">
+                    <a class="nav-link" href="logout.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-sm-6 mx-auto">
+                <div class="card bg-dark text-light">
+                    <div class="card-header">
+                        Add Member
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" class="form-control" name="fullname" id="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" name="username" id="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="text" class="form-control" name="password" id="password">
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">Member Type</label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                <input class="form-check-input" type="radio" name="type" value="reguler">
+                                <label class="form-check-label">Reguler</label> &nbsp; &nbsp;
+                                <input class="form-check-input" type="radio" name="type" value="vip">
+                                <label class="form-check-label">VIP</label>
+                            </div>
+                            <div class="form-group mt-3">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label for="">Add Billing</label>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <select name="billing" id="billing" class="custom-select">
+                                            <option value="1">1 Jam Rp20.000</option>
+                                            <option value="2">2 Jam Rp20.000</option>
+                                            <option value="3">3 Jam Rp20.000</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="div mt-5">
+                                <button class="btn btn-primary" type="submit">Add Member</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery -->
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js.map"></script>
+</body>
+
+</html>

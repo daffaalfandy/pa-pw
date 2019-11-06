@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/all.css">
+    <title>Ukulele Game Warnet</title>
+</head>
+
+<body style="background: #353b48;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Ukulele</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">List Member<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="add.html">Add Member</a>
+                </li>
+                <li class=" text-right">
+                    <a class="nav-link" href="logout.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-3">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Time</th>
+                    <th>Type</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a class="text-white" href="detail.html">Daffa</a></td>
+                    <td>5 Jam</td>
+                    <td>Reguler</td>
+                    <td>
+                        <a class="text-info" href="edit.html"><i class="fas fa-edit"> </i></a> &nbsp; &nbsp;
+                        <a href="delete.html" class="text-info"><i class="fas fa-trash-alt"> </i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Jquery -->
+    <script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js.map"></script>
+</body>
+
+</html>
