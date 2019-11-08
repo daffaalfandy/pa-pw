@@ -9,6 +9,9 @@ class Blog extends CI_Controller
     {
         parent::__construct();
         $this->load->model('MY_model');
+        if (!$this->session->userdata('fullname')) {
+            redirect('admin/login');
+        }
     }
 
     public function index()
@@ -37,7 +40,7 @@ class Blog extends CI_Controller
             'matches'       => 'Password does not match',
             'min_length'    => 'Password too short'
         ]);
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|matches[password]', ['matches'   => 'Password does not match']);
+        $this->form_validation->set_rules('password_confirm', 'Password', 'trim|required|min_length[4]|matches[password]', ['matches'   => 'Password does not match']);
         $this->form_validation->set_rules('identity', 'Sort of Identity', 'trim|required');
         $this->form_validation->set_rules('identity_num', 'Identity Number', 'trim|required|is_natural');
 
@@ -53,6 +56,7 @@ class Blog extends CI_Controller
 
     public function _add()
     {
+        $table  = 'user';
         $data   = [
             'username'      => htmlspecialchars($this->input->post('username', true)),
             'fullname'      => htmlspecialchars($this->input->post('fullname', true)),
@@ -63,7 +67,7 @@ class Blog extends CI_Controller
             'type'          => $this->input->post('type', true),
             'gender'        => $this->input->post('gender', true)
         ];
-        if ($this->MY_model->addMember($data)) {
+        if ($this->MY_model->addMember($table, $data)) {
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Register Success </div>');
             redirect('blog/add');
         } else {
@@ -100,8 +104,16 @@ class Blog extends CI_Controller
             $this->load->view('templates/footer');
         }
     }
-    public function _edit()
-    { }
+    public function delete($id)
+    {
+        if ($this->MY_model->deleteDetail($id)) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Delete Success </div>');
+            redirect('blog');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-warning" role="alert">Delete Failed </div>');
+            redirect('blog');
+        }
+    }
 }
 
 /* End of file Blog.php */

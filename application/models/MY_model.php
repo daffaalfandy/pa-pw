@@ -14,9 +14,9 @@ class MY_model extends CI_Model
         return $this->db->get_where('user', ['id' => $id])->row_array();
     }
 
-    public function addMember($data)
+    public function addMember($table, $data)
     {
-        $this->db->insert('user', $data);
+        $this->db->insert($table, $data);
         return $this->db->affected_rows();
     }
 
@@ -25,6 +25,18 @@ class MY_model extends CI_Model
         $this->db->where('id', $id);
         $this->db->update('user', $update);
         return $this->db->affected_rows();
+    }
+
+    public function deleteDetail($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('user');
+        return $this->db->affected_rows();
+    }
+
+    public function getAdmin($username)
+    {
+        return $this->db->get_where('admin', ['username' => $username])->row_array();
     }
 }
 
