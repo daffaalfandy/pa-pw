@@ -114,6 +114,16 @@ class Blog extends CI_Controller
             redirect('blog');
         }
     }
+
+    public function search()
+    {
+        $search = $this->input->post('search');
+        $data['users']  = $this->MY_model->searchUser($search);
+        $this->load->view('templates/header');
+        $this->load->view('templates/navbar');
+        $this->load->view('blog/index', $data);
+        $this->load->view('templates/footer');
+    }
 }
 
 /* End of file Blog.php */

@@ -20,8 +20,8 @@
             <li class="nav-item">
                 <a class="float-right nav-link" href="<?= base_url('admin/logout'); ?>">Logout</a>
             </li>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search">
+            <form class="form-inline my-2 my-lg-0" action="<?= base_url('blog/search') ?>" method="post">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search" name="search">
                 <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
         </ul>

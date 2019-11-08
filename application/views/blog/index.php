@@ -24,4 +24,3 @@
         </tbody>
     </table>
 </div>
-<script src="<?= baseurl('assets/js/script.js'); ?>"></script>

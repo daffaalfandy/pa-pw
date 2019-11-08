@@ -38,6 +38,11 @@ class MY_model extends CI_Model
     {
         return $this->db->get_where('admin', ['username' => $username])->row_array();
     }
+
+    public function searchUser($search)
+    {
+        return $this->db->query("SELECT * FROM `user` WHERE username LIKE '%$search%'")->result_array();
+    }
 }
 
 /* End of file MY_model.php */
