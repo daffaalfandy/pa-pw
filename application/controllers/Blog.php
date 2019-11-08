@@ -79,13 +79,7 @@ class Blog extends CI_Controller
         $this->form_validation->set_rules('identity', 'Sort of Identity', 'trim|required');
         $this->form_validation->set_rules('identity_num', 'Identity Number', 'trim|required|is_natural');
 
-        if ($this->form_validation->run() == false) {
-
-            $this->load->view('templates/header');
-            $this->load->view('templates/navbar');
-            $this->load->view('blog/edit', $data);
-            $this->load->view('templates/footer');
-        } else {
+        if ($this->form_validation->run() === TRUE) {
             $update     = [
                 'fullname'      => htmlspecialchars($this->input->post('fullname', true)),
                 'identity'      => htmlspecialchars($this->input->post('identity', true)),
@@ -99,8 +93,15 @@ class Blog extends CI_Controller
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Update Failed </div>');
                 redirect('blog/edit');
             }
+        } else {
+            $this->load->view('templates/header');
+            $this->load->view('templates/navbar');
+            $this->load->view('blog/edit', $data);
+            $this->load->view('templates/footer');
         }
     }
+    public function _edit()
+    { }
 }
 
 /* End of file Blog.php */

@@ -7,7 +7,7 @@
                 </div>
                 <div class="card-body">
                     <?= $this->session->flashdata('message'); ?>
-                    <form action="<?= base_url('blog/edit/' . $user['id']); ?>" method="post">
+                    <form action="<?= base_url('blog/edit'); ?>" method="post">
                         <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" class="form-control" name="username" id="username" value="<?= $user['username'] ?>" disabled>
