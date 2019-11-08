@@ -41,7 +41,8 @@ class MY_model extends CI_Model
 
     public function searchUser($search)
     {
-        return $this->db->query("SELECT * FROM `user` WHERE username LIKE '%$search%'")->result_array();
+        $this->db->like('username', $search);
+        return $this->db->get('user')->result_array();
     }
 }
 
