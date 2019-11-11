@@ -4,9 +4,14 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class MY_model extends CI_Model
 {
-    public function getUser()
+    public function getUser($limit, $offset)
     {
-        return $this->db->get('user')->result_array();
+        return $this->db->get('user', $limit, $offset)->result_array();
+    }
+
+    public function getTotalUser()
+    {
+        return $this->db->count_all_results('user');
     }
 
     public function getDetail($id)
@@ -39,10 +44,16 @@ class MY_model extends CI_Model
         return $this->db->get_where('admin', ['username' => $username])->row_array();
     }
 
-    public function searchUser($search)
+    public function searchUser($search, $limit, $offset)
     {
         $this->db->like('username', $search);
-        return $this->db->get('user')->result_array();
+        return $this->db->get('user', $limit, $offset)->result_array();
+    }
+
+    public function getTotalSearch($search)
+    {
+        $this->db->like('username', $search);
+        return $this->db->count_all_results('user');
     }
 }
 
